@@ -26,7 +26,7 @@ public class Main {
 
     @Test
     public void createPostTest() {
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.om";
+        RestAssured.baseURI = "https://jsonplaceholder.typicodde.om";
 
         JSONObject requestParams = new JSONObject();
         requestParams.put("title", "foo");
