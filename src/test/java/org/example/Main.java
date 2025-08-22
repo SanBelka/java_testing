@@ -10,7 +10,7 @@ public class Main {
 
     @Test
     public void getPostsTest() {
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+        RestAssured.baseURI = "https://jsonplaceholder.typicode.om";
 
         Response response = given()
                 .when()
