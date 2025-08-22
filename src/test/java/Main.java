@@ -1,49 +1,19 @@
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import org.json.JSONObject;
+
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
 
 public class Main {
 
     @Test
-    public void getPostsTest() {
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.om";
-
-        Response response = given()
-                .when()
-                .get("/posts")
-                .then()
-                .statusCode(200) // проверка статуса ответа
-                .extract().response();
-
-        System.out.println("Response: " + response.asString());
-
-        Assert.assertTrue(response.asString().contains("userId"));
+    public void testPass() {
+        System.out.println("Этот тест пройдет");
+        Assert.assertTrue(true);
     }
 
     @Test
-    public void createPostTest() {
-        RestAssured.baseURI = "https://jsonplaceholder.typicodde.om";
-
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("title", "foo");
-        requestParams.put("body", "bar");
-        requestParams.put("userId", 1);
-
-        Response response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(requestParams.toString())
-                .when()
-                .post("/posts")
-                .then()
-                .statusCode(201) // Created
-                .extract().response();
-
-        System.out.println("Created Post: " + response.asString());
-        Assert.assertEquals(response.jsonPath().getInt("userId"), 1);
+    public void testFail() {
+        System.out.println("Этот тест должен упасть");
+        Assert.assertTrue(false, "Принудительная ошибка");
     }
 }
