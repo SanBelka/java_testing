@@ -47,6 +47,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <!-- Используем автоматическое обнаружение тестов -->
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/*TestCase.java</include>
+                    </includes>
 
                     <!-- Билд падает при ошибках -->
                     <testFailureIgnore>false</testFailureIgnore>
