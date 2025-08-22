@@ -47,10 +47,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <!-- Указываем TestNG -->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
 
                     <!-- Билд падает при ошибках -->
                     <testFailureIgnore>false</testFailureIgnore>
